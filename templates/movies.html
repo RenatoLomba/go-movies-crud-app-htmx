@@ -1,0 +1,37 @@
+<a
+  hx-get="/new-movie"
+  hx-target="#container"
+  hx-swap="innerHTML"
+  hx-push-url="true"
+  >Create Movie</a
+>
+
+<ul>
+  {{ range .Movies }}
+  <li>
+    <div><strong>{{ .Isbn }}:</strong>- {{ .Title }}</div>
+    <div>
+      <a href="/movies/{{ .Id }}"> Details </a>
+    </div>
+    <div>
+      <button
+        hx-delete="/delete-movie/{{ .Id }}"
+        hx-target="#container"
+        hx-swap="innerHTML"
+        hx-confirm="Are you sure you wish to delete this movie?"
+      >
+        Delete
+      </button>
+    </div>
+    <div>
+      <a
+        hx-get="/edit-movie/{{ .Id }}"
+        hx-target="#container"
+        hx-swap="innerHTML"
+        hx-push-url="true"
+        >Edit</a
+      >
+    </div>
+  </li>
+  {{ end }}
+</ul>

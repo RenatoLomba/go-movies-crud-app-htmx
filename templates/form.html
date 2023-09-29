@@ -1,0 +1,48 @@
+<style>
+  form div {
+    margin-bottom: 1em;
+  }
+</style>
+
+<form hx-{{ .Method }}="{{ .HxUrl }}">
+  <h2>{{ .PageTitle }}</h2>
+
+  <div>
+    <label for="title">Title</label>
+    <input type="text" name="title" id="title" value="{{ .DataForm.Title }}" />
+  </div>
+
+  <div>
+    <label for="isbn">Isbn</label>
+    <input type="text" name="isbn" id="isbn" value="{{ .DataForm.Isbn }}" />
+  </div>
+
+  <div>
+    <label for="synopsis">Synopsis</label>
+    <textarea name="synopsis" id="synopsis">{{ .DataForm.Synopsis }}</textarea>
+  </div>
+
+  <h2>Director</h2>
+
+  <div>
+    <label for="directorfirstname">First Name</label>
+    <input
+      type="text"
+      name="directorfirstname"
+      id="directorfirstname"
+      value="{{ .DataForm.Director.Firstname }}"
+    />
+  </div>
+
+  <div>
+    <label for="directorlastname">Last Name</label>
+    <input
+      type="text"
+      name="directorlastname"
+      id="directorlastname"
+      value="{{ .DataForm.Director.Lastname }}"
+    />
+  </div>
+
+  <button type="submit">Submit</button>
+</form>

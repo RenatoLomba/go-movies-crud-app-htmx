@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Movies GO</title>
+
+    <link rel="stylesheet" href="/public/styles.css" />
+  </head>
+  <body>
+    <h1>Movies GO</h1>
+
+    <main id="container">
+      <h2>{{ .Movie.Title }}</h2>
+      <h3>{{ .Movie.Isbn }}</h3>
+
+      <p>{{ .Movie.Synopsis }}</p>
+
+      <div>
+        <strong>Director</strong>
+
+        <div>
+          {{ .Movie.Director.Firstname }} {{ .Movie.Director.Lastname }}
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
